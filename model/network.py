@@ -19,13 +19,13 @@ class Net:
         # softmax: 10 -> 10
         lr = 0.01
         self.layers = []
-        self.layers.append(Convolution2D(inputs_channel=1, num_filters=6, kernel_size=5, padding=2, stride=1, learning_rate=lr, name='conv1'))
+        self.layers.append(Conv2D(inputs_channel=1, num_filters=6, kernel_size=5, padding=2, stride=1, learning_rate=lr, name='conv1'))
         self.layers.append(ReLu())
         self.layers.append(Maxpooling2D(pool_size=2, stride=2, name='maxpool2'))
-        self.layers.append(Convolution2D(inputs_channel=6, num_filters=16, kernel_size=5, padding=0, stride=1, learning_rate=lr, name='conv3'))
+        self.layers.append(Conv2D(inputs_channel=6, num_filters=16, kernel_size=5, padding=0, stride=1, learning_rate=lr, name='conv3'))
         self.layers.append(ReLu())
         self.layers.append(Maxpooling2D(pool_size=2, stride=2, name='maxpool4'))
-        self.layers.append(Convolution2D(inputs_channel=16, num_filters=120, kernel_size=5, padding=0, stride=1, learning_rate=lr, name='conv5'))
+        self.layers.append(Conv2D(inputs_channel=16, num_filters=120, kernel_size=5, padding=0, stride=1, learning_rate=lr, name='conv5'))
         self.layers.append(ReLu())
         self.layers.append(Flatten())
         self.layers.append(FullyConnected(num_inputs=120, num_outputs=84, learning_rate=lr, name='fc6'))

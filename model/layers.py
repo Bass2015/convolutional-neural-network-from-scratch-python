@@ -1,8 +1,8 @@
 import numpy as np 
 
-class Convolution2D:
-
-    def __init__(self, inputs_channel, num_filters, kernel_size, padding, stride, learning_rate, name):
+class Conv2D:
+# Agregar la función de activación. 
+    def __init__(self, inputs_channel, num_filters, kernel_size=4, padding=0, stride=1, learning_rate=0.01, name=""):
         # weight size: (F, C, K, K)
         # bias size: (F) 
         self.F = num_filters
