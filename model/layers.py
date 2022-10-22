@@ -20,6 +20,7 @@ class Conv2D:
         self.name = name
 
     def zero_padding(self, inputs, size):
+        # agrega padding alrededor de la imagen, con ceros. No la necesito
         w, h = inputs.shape[0], inputs.shape[1]
         new_w = 2 * size + w
         new_h = 2 * size + h
